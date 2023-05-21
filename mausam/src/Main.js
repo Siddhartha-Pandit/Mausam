@@ -13,11 +13,11 @@ import { BsThermometerHalf } from "react-icons/bs";
 
 const Main = () => {
     const [content, setContent] = useState(null);
-    const city = "bengaluru"
+    const city = "lalitpur"
     useEffect(() => {
 
 
-        const url = 'https://api.openweathermap.org/data/2.5/weather?q=bengaluru&units=metric&appid=bbff79c48d5f5275d125ff06e7347d5c'
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=bbff79c48d5f5275d125ff06e7347d5c`
         fetch(url)
             .then(res => {
                 if (!res.ok) {
@@ -37,7 +37,7 @@ const Main = () => {
 
                 console.log(" npx json-server --watch data/db.json --port 8000")
                 if (err.name === 'AbortError') {
-                    console.log("we ablorted the fetch")
+                    console.log("we aborted the fetch")
                 }
 
             })

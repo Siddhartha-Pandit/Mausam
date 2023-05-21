@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect,  useState } from "react";
 import background from "./clearskyday.jpg";
 import { HiLocationMarker } from "react-icons/hi";
 import { MdOutlineDeviceThermostat, MdOutlineWaterDrop } from "react-icons/md";
@@ -8,43 +8,41 @@ import { FaSun } from "react-icons/fa";
 import { BsArrowDownRight } from "react-icons/bs";
 import { CiDroplet } from "react-icons/ci";
 import { BsThermometerHalf } from "react-icons/bs";
+import useFetch from "./useFetch";
 
 
 
-const Main = () => {
-    const [content, setContent] = useState(null);
-    const city = "lalitpur"
+const Main = (props) => {
+    const items = props.items;
+    // console.log(`${items} in main react component`)
+    const [city, setCity] = useState('Bengaluru');
+
     useEffect(() => {
+        setCity(items)
+    }, [items]);
 
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=bbff79c48d5f5275d125ff06e7347d5c`
+    const { data: content } = useFetch(url)
+    // const [city , setCity] = useState('Bengaluru');
+    function unixtoreal(timestamp) {
+        const tz = content && content.timezone
+        console.log(tz);
+        const ttt = tz * 1000
+        const timee = timestamp * 1000;
+        let dateobj = new Date(timee + ttt);
+        const timeOptions = { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' };
+        const formattedTime = dateobj.toLocaleTimeString([], timeOptions);
+        return (formattedTime);
+    }
+    function realtime(offsetSeconds) {
 
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=bbff79c48d5f5275d125ff06e7347d5c`
-        fetch(url)
-            .then(res => {
-                if (!res.ok) {
-                    throw Error("Could no fetch data")
-                }
-                return res.json();
-            })
-            .then(data => {
-                console.log(data)
-                setContent(data)
+        const offsetMilliseconds = offsetSeconds * 1000;
 
-            })
-            .catch((err) => {
-                console.log(err.message);
-                console.log("json server not started")
-                console.log("please start server by typing")
-
-                console.log(" npx json-server --watch data/db.json --port 8000")
-                if (err.name === 'AbortError') {
-                    console.log("we aborted the fetch")
-                }
-
-            })
-
-
-
-    }, [])
+        const dateObj = new Date(Date.now() + offsetMilliseconds);
+        const timeOptions = { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' };
+        const formattedTime = dateObj.toLocaleTimeString([], timeOptions);
+        return (formattedTime)
+    }
 
 
     return (
@@ -62,7 +60,7 @@ const Main = () => {
                         <div className="locatime">
                             <div className="loca"><HiLocationMarker /> {content && content.name}  </div>
 
-                            <div className="time">Today {content && content.timezone}PM</div>
+                            <div className="time">Today {realtime(content && content.timezone)}</div>
                         </div>
                         <div className="tempdesc">
 
@@ -81,7 +79,7 @@ const Main = () => {
 
                             <div><MdOutlineWaterDrop /> {content && content.main.humidity}%</div>
 
-                            <div> <BiWind />  {content && content.wind.speed}km/h</div>
+                            <div> <BiWind />  {content && content.wind.speed}m/s</div>
                         </div>
 
 
@@ -94,7 +92,7 @@ const Main = () => {
 
                                 <div className="timecont">
 
-                                    <div className="sun"> <div className="san rise"><WiSunrise /></div><div className="indi">Sunrise</div><div className="tex">6:00 AM</div></div>
+                                    <div className="sun"> <div className="san rise"><WiSunrise /></div><div className="indi">Sunrise</div><div className="tex">{unixtoreal(content && content.sys.sunrise)}</div></div>
 
                                     <div id="horizon">Horizon</div>
 
@@ -102,7 +100,7 @@ const Main = () => {
                                         <FaSun id="suryarachandrama" />
 
                                     </div>
-                                    <div className="sun moon"> <div className="san set"><WiSunset /></div><div className="tex"><div className="indi">Sunset</div>6:00 PM</div></div>
+                                    <div className="sun moon"> <div className="san set"><WiSunset /></div><div className="tex"><div className="indi">Sunset</div>{unixtoreal(content && content.sys.sunset)}</div></div>
                                 </div>
                             </div>
 
@@ -125,7 +123,7 @@ const Main = () => {
                     <div className="pex">
                         Wind
                         <div className="pex spx">Today wind speed</div>
-                        <div> {content && content.wind.speed} km/h</div>
+                        <div> {content && content.wind.speed} m/s</div>
                     </div>
                     <div> <div id="compass">
                         <BsArrowDownRight className="arrow" />
@@ -154,7 +152,7 @@ const Main = () => {
                         <div>{content && content.main.pressure} hpa</div>
                     </div>
                     <div className="baro">
-                        <div className="pop"><BsArrowDownRight className="ar" /><div class="cic"></div></div>
+                        <div className="pop"><BsArrowDownRight className="ar" /><div className="cic"></div></div>
                     </div>
 
                 </div>

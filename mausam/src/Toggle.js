@@ -22,12 +22,13 @@ const Toggle = styled(Switch)(({ theme }) => ({
         '& + .MuiSwitch-track': {
           opacity: 1,
           backgroundColor: theme.palette.mode === 'dark' ? '#8796A5' : '#aab4be',
-        //   #8796A5
+        //   #8796A5 #aab4be
         },
       },
     },
     '& .MuiSwitch-thumb': {
       backgroundColor: theme.palette.mode === 'dark' ? '#003892' : '#001e3c',
+      // #003892 #001e3c
       width: 32,
       height: 32,
       '&:before': {

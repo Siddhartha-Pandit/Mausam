@@ -67,8 +67,22 @@
     width:160px;
     height:160px;
     /* background-color: green; */
-    border-radius: 50%;
+    /* border-radius: 50%; */
     border: 3px solid #cafe;
+    background: linear-gradient(to right, #ff0000, #00ff00);
+  animation: gradientAnimation 5s ease-in-out infinite;
     stroke-dasharray:50;
     /* stroke-dashoffset: 300; */
+    animation: anim 0s linear forwards;
+  }
+  @keyframes gradientAnimation {
+    0% {
+      background: linear-gradient(to right, #ff0000, #00ff00);
+    }
+    50% {
+      background: linear-gradient(to right, #ff0000, #00ff00, #0000ff);
+    }
+    100% {
+      background: linear-gradient(to right, #ff0000, #00ff00);
+    }
   }

@@ -19,6 +19,7 @@
   --baro-color:#98CCFD00;
   --set-color:#657b8e;
   --gold:#dca84e;
+  --progress:#dca84e;
   --supp-color:#ecf3f8;
   --infoCircle:#ededed;
     /*
@@ -37,7 +38,13 @@
   --shadowBlack:rgba(0,0,0,0.202);
   --shadowWhite:rgba(255,255,255,0.719);
 /*-------colorend-------*/
-
+/* -------anmiamtion start------- */
+--comapss-arrowAngle:0deg;
+--baro-anima:0deg;
+--sun-angle:0deg;
+--circleroto:-90deg;
+--horizonroto:90deg;
+/* -------animation end--------- */
 
 }
 *{
@@ -250,24 +257,25 @@ color:var(--spx);
  display: flex;
  align-items: center;
  justify-content: center;
-  background: conic-gradient(var(--gold) 50deg, var( --circle) 0deg);
+  
  
   border-radius: 50%;
   width: 22.55rem;
 
   height: 22.55rem;
-  transform: rotate(-90deg);
+  transform: rotate(var(--circleroto));
 
 }
 
 .timecont{
-  transform: rotate(90deg);
+  transform: rotate(var(--horizonroto));
 }
 .innercic{
   display: flex;
   justify-content: center;
   align-items: center;
   background-color:var( --navbar) ;
+  /* background-color: #ffffff80; */
   height: 21.65rem;
   width: 21.65rem;
   border-radius: 50%;
@@ -452,8 +460,10 @@ color: var(--light-blue);
   border:0rem solid;
   background:  conic-gradient(var(--baro-color) , #6bb6fc , #98CCFD00 );
   border-radius: 50%;
-  transform: rotate(180deg);
+ 
+  
 }
+
 .baro::after{
   content: '';
   position: absolute;
@@ -509,6 +519,44 @@ z-index: 3;
   color: var(--light-blue);
   margin-left: 4.5rem;
   }
+  
+  /*------- animation------- */
+  .arrow{
+
+    animation: compp 1s linear forwards;
+  }
+  @keyframes compp{
+    0%{
+      transform: rotate(255deg);
+    }
+    100%{
+      transform: rotate(var(--comapss-arrowAngle));
+    }
+  }
+  .baro{
+   
+    animation: baroanim 1s linear forwards;
+    
+  }
+  @keyframes baroanim {
+    0%{
+      transform: rotate(45deg);
+    }
+    100%{
+      transform: rotate(var(--baro-anima));
+      /* transform: rotate(45deg); */
+
+    }
+    
+  }
+  .circle{
+ 
+    animation: sunny 5s linear forwards;
+    background: conic-gradient(var(--progress) var(--sun-angle), var( --circle) 0deg);
+  }
+  
+  
+  /*------------------------ */
   @media(max-width:998rem){
     html{
       font-size: 55%;

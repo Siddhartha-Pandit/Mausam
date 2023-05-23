@@ -1,4 +1,4 @@
-import { useEffect,  useState } from "react";
+import { useEffect, useState } from "react";
 import background from "./clearskyday.jpg";
 import { HiLocationMarker } from "react-icons/hi";
 import { MdOutlineDeviceThermostat, MdOutlineWaterDrop } from "react-icons/md";
@@ -24,34 +24,34 @@ const Main = (props) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=bbff79c48d5f5275d125ff06e7347d5c`
     const { data: content } = useFetch(url)
     // const [city , setCity] = useState('Bengaluru');
-    const windAngle= content && content.wind.deg
+    const windAngle = content && content.wind.deg
     // const windAngle= 180;
-    const deg=windAngle -135
-    const actualangle=deg+"deg"
-    const r=document.querySelector(':root')
-    r.style.setProperty("--comapss-arrowAngle",`${actualangle}`)
-    const atmpress=content && content.main.pressure
-    const pressdeg=(((atmpress-870)/360)*360)+90
-    const atmpressdeg=pressdeg+"deg"
-    r.style.setProperty("--baro-anima",`${atmpressdeg}`)
-    const sunrisetime= content && content.sys.sunrise
-    const sunsettime= content && content.sys.sunset
-    const currtime= content && content.dt
-    const sundeg=((currtime - sunrisetime)/(sunsettime - sunrisetime))*180;
-    const sundegstr=sundeg+"deg"
-    if(sundeg>=180){
-        r.style.setProperty("--progress","#24609B")
-        r.style.setProperty("--circleroto","90deg")
-        r.style.setProperty("--horizonroto","-90deg")
-        const a=sundeg-179;
-        const b=a+"deg"
-        r.style.setProperty("--sun-angle",`${b}`)
+    const deg = windAngle - 135
+    const actualangle = deg + "deg"
+    const r = document.querySelector(':root')
+    r.style.setProperty("--comapss-arrowAngle", `${actualangle}`)
+    const atmpress = content && content.main.pressure
+    const pressdeg = (((atmpress - 870) / 360) * 360) + 90
+    const atmpressdeg = pressdeg + "deg"
+    r.style.setProperty("--baro-anima", `${atmpressdeg}`)
+    const sunrisetime = content && content.sys.sunrise
+    const sunsettime = content && content.sys.sunset
+    const currtime = content && content.dt
+    const sundeg = ((currtime - sunrisetime) / (sunsettime - sunrisetime)) * 180;
+    const sundegstr = sundeg + "deg"
+    if (sundeg >= 180) {
+        r.style.setProperty("--progress", "#24609B")
+        r.style.setProperty("--circleroto", "90deg")
+        r.style.setProperty("--horizonroto", "-90deg")
+        const a = sundeg - 179;
+        const b = a + "deg"
+        r.style.setProperty("--sun-angle", `${b}`)
     }
-    else{
-        r.style.setProperty("--progress","#dca84e")
-        r.style.setProperty("--circleroto","-90deg")
-        r.style.setProperty("--horizonroto","90deg")
-        r.style.setProperty("--sun-angle",`${sundegstr}`)
+    else {
+        r.style.setProperty("--progress", "#dca84e")
+        r.style.setProperty("--circleroto", "-90deg")
+        r.style.setProperty("--horizonroto", "90deg")
+        r.style.setProperty("--sun-angle", `${sundegstr}`)
     }
     function unixtoreal(timestamp) {
         const tz = content && content.timezone
@@ -85,7 +85,6 @@ const Main = (props) => {
 
 
                     <div className="whole" >
-
                         <div className="locatime">
                             <div className="loca"><HiLocationMarker /> {content && content.name}  </div>
 
@@ -160,7 +159,7 @@ const Main = (props) => {
                         <span className="sd"><b className="abc abcs">S</b></span>
                         <span className="wd"><b className="abc abcw">W</b></span>
                         <span className="nd"><b className="abc abcn">N</b></span>
-                        
+
                     </div>
                     </div>
                 </div>
@@ -170,7 +169,14 @@ const Main = (props) => {
                         <div className=" pex spx">Today humidity</div>
                         <div> {content && content.main.humidity}%</div>
                     </div>
-                    <div className="hum"><CiDroplet className="drop" /></div>
+                    {/* <div className="hum"><CiDroplet className="drop" > </CiDroplet></div> */}
+                    <div className="hum"><div className="drop">
+                        <div className="drop1">
+                            <div className="liquid">
+                            </div>
+                        </div>
+                    </div>
+                    </div>
                 </div>
 
                 <div className="supp">

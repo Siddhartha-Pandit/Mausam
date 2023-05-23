@@ -17,19 +17,23 @@ const Main = (props) => {
     // console.log(`${items} in main react component`)
     const [city, setCity] = useState('Bengaluru');
 
-    useEffect(() => {
-        setCity(items)
-    }, [items]);
+    
 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=bbff79c48d5f5275d125ff06e7347d5c`
     const { data: content } = useFetch(url)
-    // const [city , setCity] = useState('Bengaluru');
+
     const windAngle = content && content.wind.deg
     // const windAngle= 180;
-    const deg = windAngle - 135
-    const actualangle = deg + "deg"
-    const r = document.querySelector(':root')
-    r.style.setProperty("--comapss-arrowAngle", `${actualangle}`)
+    const deg = windAngle - 135;
+    const actualangle = deg + "deg";
+    
+    const r= document.querySelector(':root')
+    useEffect(() => {
+        setCity(items);
+    },[items]);
+
+
+    // r.style.setProperty("--comapss-arrowAngle", `${actualangle}`)
     const atmpress = content && content.main.pressure
     const pressdeg = (((atmpress - 870) / 360) * 360) + 90
     const atmpressdeg = pressdeg + "deg"
@@ -40,7 +44,7 @@ const Main = (props) => {
     const sundeg = ((currtime - sunrisetime) / (sunsettime - sunrisetime)) * 180;
     const sundegstr = sundeg + "deg"
     if (sundeg >= 180) {
-        r.style.setProperty("--progress", "#24609B")
+        r.style.setProperty("--progress", "#0081FF")
         r.style.setProperty("--circleroto", "90deg")
         r.style.setProperty("--horizonroto", "-90deg")
         const a = sundeg - 179;

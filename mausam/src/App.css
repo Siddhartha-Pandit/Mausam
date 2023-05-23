@@ -1,3 +1,4 @@
+/* background: linear-gradient(315deg,#24609B44 ,#24609B33 ) ; */
 /*
 #8a2525   
 #24609b
@@ -22,6 +23,8 @@
   --progress:#dca84e;
   --supp-color:#ecf3f8;
   --infoCircle:#ededed;
+  --thermoup:#24609B44;
+  --thermodown:#24609B33;
     /*
   130c07
   
@@ -44,6 +47,8 @@
 --sun-angle:0deg;
 --circleroto:-90deg;
 --horizonroto:90deg;
+--humid:50%;
+--templiq:0%;
 /* -------animation end--------- */
 
 }
@@ -51,7 +56,7 @@
   margin: 0px;
   padding: 0px;
   
-
+  
 }
 
 html{
@@ -65,17 +70,17 @@ body{
   display: flex;
   position: sticky;
   border:1px solid var( --navbar);
- 
+  
   height:10rem;
   box-shadow: 0px 0.4rem 0.4rem var( --shadowBlack);
- align-items: center; 
+  align-items: center; 
 }
 .logo{
   display: flex;
   align-items: center;
   font-size: 2.5rem;
- margin-right: 2rem;
- margin-left: 5rem;
+  margin-right: 2rem;
+  margin-left: 5rem;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .logo img{
@@ -87,17 +92,17 @@ body{
   
   display: flex;
   width: 100%;
- 
- align-items: center;
- justify-content: space-between;
- 
+  
+  align-items: center;
+  justify-content: space-between;
+  
 }
 .search{
- width: 100%;
+  width: 100%;
   align-items: center;
   
   
-
+  
 }
 .seacont{
   display:flex;
@@ -106,7 +111,7 @@ body{
   max-width: 65rem;
 }
 .searchbox{
- 
+  
   background-color:var(--supp-color)  ;
   border:1px solid var( --navbar);
   display:flex;
@@ -120,14 +125,14 @@ body{
   
 }
 .but{
-border-radius: 0rem 2rem 2rem 0rem  !important;
+  border-radius: 0rem 2rem 2rem 0rem  !important;
 }
 .sett{
   margin-left: 2rem;
   margin-right: 5rem;
- 
+  
   font-size: 2rem;
-
+  
 }
 
 .sidenav{
@@ -135,6 +140,7 @@ border-radius: 0rem 2rem 2rem 0rem  !important;
   width:25rem;
   height: 100%;
 }
+
 .main{
   display: flex;
   align-items: center;
@@ -169,6 +175,7 @@ border-radius: 0rem 2rem 2rem 0rem  !important;
   margin: 1.5rem;
   
 }
+
 .sub{
   display: flex;
   flex-direction: row; 
@@ -473,17 +480,78 @@ color: var(--light-blue);
  border-radius: 40%;
   width: 10rem;
   height: 10rem;
-  animation: spin 6s linear infinite;
+ 
 
 }
-@keyframes spin {
-  0%{
-    transform: translateY(100%) rotate(0deg);
-  }
-  100%{
-    transform: translateY(0) rotate(360deg);
-  }
+
+/* .thermometer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+  z-index: 1;
+  background-color: #6bb6fc;
+  clip-path: polygon(evenodd, 35.72% 8.68%, 39.55% 6.22%, 43.59% 4.98%, 48.75% 5.12%, 52.86% 7.02%, 55.85% 9.54%, 57.94% 12.31%, 59.19% 16.18%, 59.47% 60.17%, 63.37% 65.84%, 65.18% 72.89%, 64.48% 78.7%, 61.84% 84.92%, 57.03% 89.8%, 51.95% 92.25%, 45.13% 93.22%, 41.64% 92.95%, 38.16% 91.84%, 32.6% 88.29%, 28.55% 83.4%, 26.88% 79.25%, 26.32% 76.07%, 26.32% 73.17%, 26.74% 69.02%, 28.27% 65.42%, 29.81% 62.79%, 31.75% 60.44%, 31.89% 15.49%, 33.43% 11.76%);
+} */
+
+.therrr{
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  position: relative;
+  height: 10rem;
+  width:10rem;
+  /* background-color: #ad0ed12d; */
+}
+.bar{
+  z-index: 1;
+  height: 69.77px;
+  width: 7.97px;
+  background: linear-gradient(315deg,var(--thermoup) ,var(--thermodown) ) ; 
+  border-radius: 0 0 2.5rem 2.5rem;
+  position: absolute;
+  /* top:5px; */
+  left:50%;
+  transform: translate(-50%) rotate(180deg);
+ 
+}
+.bott{
+  height: 2.222rem;
+  width: 2.222rem;
+  background: linear-gradient(315deg,var(--thermoup) ,var(--thermodown) ) ; 
+  position: relative;
+ top:69px;
+  border-radius: 50%;
+
+}
+.bott::after{
+  content: "";
+  display: block;
+  width:1.33rem;
+  height:1.33rem;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   
+
+}
+.bar::after{
+  content: "";
+  display: block;
+  height: 0%;
+  width:0.3rem;
+  position: absolute;
+  left:30%;
+  /* transform: translate(-50%); */
+  top: -3.3px;
+  border-radius: 0rem 0rem 1rem 1rem;
+  background-color: red;
+ 
 }
 
 .baro{
@@ -592,7 +660,29 @@ z-index: 3;
     animation: sunny 5s linear forwards;
     background: conic-gradient(var(--progress) var(--sun-angle), var( --circle) 0deg);
   }
-  
+  .liquid{
+    animation: spin 3s linear forwards;
+  }
+  @keyframes spin {
+    0%{
+      transform: translateY(100%) rotate(0deg);
+    }
+    100%{
+      transform: translateY(var(--humid)) rotate(360deg);
+    }
+    
+  }
+  .bar::after{
+    animation:thermo 3s linear forwards ;
+  }
+  @keyframes thermo {
+    0%{
+      height: 0%;
+    }
+    100%{
+      height: var(--templiq);
+    }
+  }
   
   /*------------------------ */
   @media(max-width:998rem){

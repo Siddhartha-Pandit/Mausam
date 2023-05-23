@@ -45,6 +45,8 @@ const NavBar = () => {
         r.style.setProperty("--horizonfill","#555555")
         r.style.setProperty("--mirrorup","#130c0766")
         r.style.setProperty("--mirrordown","#130c0733")
+        r.style.setProperty("--thermoup","#ECF3F866")
+        r.style.setProperty("--thermodown","#ECF3F833")
     }
     else{
         r.style.setProperty("--circle","#b7c2cb")
@@ -58,6 +60,8 @@ const NavBar = () => {
         r.style.setProperty("--horizonfill","#ffffff")
         r.style.setProperty("--mirrorup","#ECF3F866")
         r.style.setProperty("--mirrordown","#ECF3F833")
+        r.style.setProperty("--thermoup","#24609B66")
+        r.style.setProperty("--thermodown","#24609B33")
     }
     return (
         <div>

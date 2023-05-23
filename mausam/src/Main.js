@@ -53,6 +53,17 @@ const Main = (props) => {
         r.style.setProperty("--horizonroto", "90deg")
         r.style.setProperty("--sun-angle", `${sundegstr}`)
     }
+    const humid = 100 - (content && content.main.humidity);
+    const droplet = humid + "%"
+    r.style.setProperty("--humid", `${droplet}`)
+    
+    const actualtemp = content && content.main.temp
+    const tempper=((actualtemp/80)*100);
+    const tempstr=tempper+'%'
+    console.log(tempper,"current temp in percentage")
+    console.log(tempstr,"current temp in percentage")
+    r.style.setProperty("--templiq",`${tempstr}`)
+
     function unixtoreal(timestamp) {
         const tz = content && content.timezone
         console.log(tz);
@@ -199,8 +210,14 @@ const Main = (props) => {
                         <div className="spx pex">Current Temperature</div>
                         <div className="pex">{content && content.main.temp}°</div>
                     </div>
-                    <div>
-                        <BsThermometerHalf className="ther" />
+                    <div className="thermocontainer">
+                        {/* <BsThermometerHalf className="ther" /> */}
+                        {/* <div className="thermometer"> */}
+                        <div className="therrr">
+                            <div className="bar"></div>
+                            <div className="bott"></div>
+                        </div>
+                        {/* </div> */}
                         {/* <div>  {content && content.main.temp_min}°</div>
                         <div>  {content && content.main.temp_max}°</div> */}
                     </div>

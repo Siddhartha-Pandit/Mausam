@@ -40,15 +40,17 @@
   --horizonfill: #ffffff;
   --shadowBlack: rgba(0, 0, 0, 0.202);
   --shadowWhite: rgba(255, 255, 255, 0.719);
+  --infofontcolor:#ffffff;
   /*-------colorend-------*/
   /* -------anmiamtion start------- */
-  --comapss-arrowAngle: 0deg;
+  --comapss-arrowAngle: 225deg;
   --baro-anima: 0deg;
   --sun-angle: 0deg;
   --circleroto: -90deg;
   --horizonroto: 90deg;
   --humid: 50%;
   --templiq: 0%;
+  --imagelink: url('https://www.ilovepdf.com/img/ilovepdf/social/en-US/imagepdf.png');
   /* -------animation end--------- */
 
 }
@@ -88,9 +90,9 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.logo img {
-  width: 5.5rem;
-  margin: .1rem;
+.logoicon{
+ font-size: 3rem;
+ color: #EB5353;
 
 }
 
@@ -166,6 +168,7 @@ body {
 }
 
 .info {
+  color: var(--infofontcolor);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -176,7 +179,7 @@ body {
   height: 35rem;
   border: 1px solid var(--infoCircle);
   border-radius: 1.3rem;
-
+background-repeat: no-repeat;
 }
 
 .supp {

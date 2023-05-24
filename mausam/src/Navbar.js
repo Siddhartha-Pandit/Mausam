@@ -9,6 +9,8 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useEffect, useState } from 'react';
 
 import { BsSearch } from "react-icons/bs";
+import { TbSunset2 } from "react-icons/tb";
+
 import Toggle from './Toggle';
 const NavBar = () => {
     const [dark, setDark] = useState(false)
@@ -104,6 +106,7 @@ const NavBar = () => {
         r.style.setProperty("--thermoup", "#24609B66")
         r.style.setProperty("--thermodown", "#24609B33")
     }
+
     function searchopen() {
         const r = document.querySelector('.seacont');
         const a = document.querySelector('.a');
@@ -135,6 +138,7 @@ const NavBar = () => {
     function handleSearch(event) {
         event.preventDefault();
         setActualData(searchData);
+        // searchclose();
       }
     return (
         <div>
@@ -142,7 +146,8 @@ const NavBar = () => {
                 <nav className='navi'>
 
                     <div className='a logo'>
-                        <img src={logo} alt="logo" ></img>
+                        <div className="logoicon"> <TbSunset2  /></div>
+                   
                         <div>Mausam</div>
                     </div>
                     <div className='seacont'>

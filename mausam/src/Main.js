@@ -16,21 +16,21 @@ const Main = (props) => {
     const items = props.items;
     const [city, setCity] = useState('');
     // console.log(items," is prop item")
-    
-    
+
+
 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=bbff79c48d5f5275d125ff06e7347d5c`
     const { data: content } = useFetch(url)
-   
+
     const windAngle = content && content.wind.deg
     // const windAngle= 180;
     const deg = windAngle - 135;
     const actualangle = deg + "deg";
-    
-    const r= document.querySelector(':root')
+
+    const r = document.querySelector(':root')
     useEffect(() => {
         setCity(items);
-    },[items]);
+    }, [items]);
 
 
     // r.style.setProperty("--comapss-arrowAngle", `${actualangle}`)
@@ -60,11 +60,95 @@ const Main = (props) => {
     const humid = 100 - (content && content.main.humidity);
     const droplet = humid + "%"
     r.style.setProperty("--humid", `${droplet}`)
-    
+
     const actualtemp = content && content.main.temp
-    const tempper=((actualtemp/80)*100);
-    const tempstr=tempper+'%'
-    r.style.setProperty("--templiq",`${tempstr}`)
+    const tempper = ((actualtemp / 80) * 100);
+    const tempstr = tempper + '%'
+    r.style.setProperty("--templiq", `${tempstr}`)
+    const winddeg=(content && content.wind.deg)+225
+    // const winddeg=90+225
+    const windstr=winddeg+"deg"
+    r.style.setProperty("--comapss-arrowAngle",`${windstr}`)
+
+
+
+
+
+    function bgimage(icon) {
+        const sunsettime = content && content.sys.sunset
+        const currtime = content && content.dt
+        const a=document.querySelector('.info')
+        const b=document.querySelector('.whole')
+        if (currtime > sunsettime) {
+            b.style.setProperty("color","#ffffff")
+            if (icon === "01n") {
+                let image='https://media.istockphoto.com/id/826672506/photo/night-sky-with-stars.jpg?s=612x612&w=0&k=20&c=lPeDcgxVYmPQrWcuXQuT-bCsL28ZKWCMwO3A8IrmvRo='
+                a.style.setProperty('background',`url('${image}') center center/cover no-repeat`)
+            }
+            else if (icon === "02n") {
+                let image='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8uD2y1N235a9bPnX3A2RU80ibgi1yzZtpLg&usqp=CAU'
+                a.style.setProperty('background',`url('${image}') center center/cover no-repeat`)
+            } else if (icon === "03n") {
+                let image='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Kult5vKkihr2tQr0fOIhVC_AYJ_ymOzx5A&usqp=CAU'
+                a.style.setProperty('background',`url('${image}') center center/cover no-repeat`)
+            } else if (icon === "04n") {
+                let image='https://img.freepik.com/free-photo/amazing-beautiful-sky-with-clouds_58702-1653.jpg'
+                a.style.setProperty('background',`url('${image}') center center/cover no-repeat`)
+            } else if (icon === "09n") {
+                let image='https://media.istockphoto.com/id/482380380/photo/background-rain.jpg?s=170667a&w=0&k=20&c=NYeZqb5n8ifXfHVmsaJh4FwZBIV4O_8KnUomnH4ykfc='
+                a.style.setProperty('background',`url('${image}') center center/cover no-repeat`)
+            } else if (icon === "10n") {
+                let image='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8uD2y1N235a9bPnX3A2RU80ibgi1yzZtpLg&usqp=CAU'
+                a.style.setProperty('background',`url('${image}') center center/cover no-repeat`)
+            } else if (icon === "11n") {
+                let image='https://c4.wallpaperflare.com/wallpaper/443/471/729/storm-lightning-skies-cloudy-wallpaper-preview.jpg'
+                a.style.setProperty('background',`url('${image}') center center/cover no-repeat`)
+            } else if (icon === "13n") {
+                let image='https://media.istockphoto.com/id/1190059388/vector/white-splash-on-blue-background-forest-during-a-snow-storm-at-night-christmas-tree.jpg?s=612x612&w=0&k=20&c=6ihDcTPbePYGPhRWt458eQPKvC8kWn2Dv4BR2lTdZTI='
+                a.style.setProperty('background',`url('${image}') center center/cover no-repeat`)
+            } else {
+                let image='https://e0.pxfuel.com/wallpapers/602/716/desktop-wallpaper-foggy-weather-road-foggy-tree.jpg'
+                a.style.setProperty('background',`url('${image}') center center/cover no-repeat`)
+            }
+        } else {
+            b.style.setProperty("color","#000000")
+            if (icon === "01d") {
+                let image='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzYbMT3fksOykq9KnrZUCP2Wj41OydF3pMQ9qXCm_V&s'
+                a.style.setProperty('background',`url('${image}') center center/cover no-repeat`)
+            }
+            else if (icon === "02d") {
+                let image='https://static4.depositphotos.com/1005376/324/i/600/depositphotos_3249185-stock-photo-sky.jpg'
+                a.style.setProperty('background',`url('${image}') center center/cover no-repeat`)
+            } else if (icon === "03d") {
+                let image='https://media.istockphoto.com/id/904784522/photo/dramatic-sky.jpg?s=612x612&w=0&k=20&c=x1pQSsaiwutj-l-cRrr87D206J65TjJ8cxNC2YzkI2k='
+                a.style.setProperty('background',`url('${image}') center center/cover no-repeat`)
+            } else if (icon === "04d") {
+                let image='https://img.freepik.com/free-photo/black-rain-abstract-dark-power_1127-2380.jpg'
+                a.style.setProperty('background',`url('${image}') center center/cover no-repeat`)
+            } else if (icon === "09d") {
+                let image='https://media.istockphoto.com/id/512218646/photo/storm-sky-rain.jpg?b=1&s=612x612&w=0&k=20&c=oV1VD-yJvo0OCtNaLVOR_MWX67zkLcyIx-pz7M7hedk='
+                a.style.setProperty('background',`url('${image}') center center/cover no-repeat`)
+            } else if (icon === "10d") {
+                let image='https://media.istockphoto.com/id/512218646/photo/storm-sky-rain.jpg?b=1&s=612x612&w=0&k=20&c=oV1VD-yJvo0OCtNaLVOR_MWX67zkLcyIx-pz7M7hedk='
+                a.style.setProperty('background',`url('${image}') center center/cover no-repeat`)
+            } else if (icon === "11d") {
+                let image='https://img.freepik.com/premium-photo/thunderstorm-clouds-with-lightning-day_739292-5812.jpg'
+                a.style.setProperty('background',`url('${image}') center center/cover no-repeat`)
+            } else if (icon === "13d") {
+                let image='https://media.istockphoto.com/id/614332492/photo/snow-storm.jpg?s=612x612&w=0&k=20&c=UT779vnlT6q5tRGHR_JbweEC8L0tHbXMeogrAqJeQSo='
+                a.style.setProperty('background',`url('${image}') center center/cover no-repeat`)
+            } else {
+                let image='https://media.istockphoto.com/id/1067955260/photo/misty-mountains.jpg?s=612x612&w=0&k=20&c=EPfkXyKIf0i28qtYuX-SDwFReSLnOViEIKL98YttU0s='
+                a.style.setProperty('background',`url('${image}') center center/cover no-repeat`)
+            }
+
+        }
+       
+    }
+
+
+
+
 
     function unixtoreal(timestamp) {
         const tz = content && content.timezone
@@ -87,11 +171,11 @@ const Main = (props) => {
 
 
     return (
-        <div className="main" data-testid = "main-1">
+        <div className="main" data-testid="main-1">
 
             <div className="cardcont">
                 <div className="info" style={{
-                    backgroundImage: `URL(${background})`
+                    // backgroundImage: `URL(${background})`
 
                 }}>
 
@@ -109,6 +193,7 @@ const Main = (props) => {
 
                                 <div key={index}>
                                     <div className="desc"> {cont.description}</div>
+                                    {bgimage(cont.icon)}
                                 </div>
 
                             ))}

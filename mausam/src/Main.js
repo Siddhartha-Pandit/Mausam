@@ -14,14 +14,14 @@ import useFetch from "./useFetch";
 
 const Main = (props) => {
     const items = props.items;
-    // console.log(`${items} in main react component`)
-    const [city, setCity] = useState('Bengaluru');
-
+    const [city, setCity] = useState('');
+    // console.log(items," is prop item")
+    
     
 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=bbff79c48d5f5275d125ff06e7347d5c`
     const { data: content } = useFetch(url)
-
+   
     const windAngle = content && content.wind.deg
     // const windAngle= 180;
     const deg = windAngle - 135;
@@ -64,13 +64,10 @@ const Main = (props) => {
     const actualtemp = content && content.main.temp
     const tempper=((actualtemp/80)*100);
     const tempstr=tempper+'%'
-    console.log(tempper,"current temp in percentage")
-    console.log(tempstr,"current temp in percentage")
     r.style.setProperty("--templiq",`${tempstr}`)
 
     function unixtoreal(timestamp) {
         const tz = content && content.timezone
-        console.log(tz);
         const ttt = tz * 1000
         const timee = timestamp * 1000;
         let dateobj = new Date(timee + ttt);

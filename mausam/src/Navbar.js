@@ -5,29 +5,45 @@ import Main from './Main';
 import Button from '@mui/material/Button';
 import useFetch from './useFetch';
 
-import {useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { BsSearch } from "react-icons/bs";
 import Toggle from './Toggle';
-// import './App.css'
 const NavBar = () => {
-    // const [city, setCity] = useState(null)
-
-    const [actualData, setActualData] = useState('bengaluru');
-    // const url = `https://api.openweathermap.org/data/2.5/weather?q=${actualData}&units=metric&appid=bbff79c48d5f5275d125ff06e7347d5c`
-    // const {data:content}=useFetch(url)
     const [dark, setDark] = useState(false)
-    // const sunrisetime = content && content.sys.sunrise
-    // const sunsettime = content && content.sys.sunset
-    // const currtime = content && content.dt
+    const [actualData, setActualData] = useState('');
+    const [lat, setlat] = useState('');
+    const [lon, setlon] = useState('')
+    function success(position) {
+        const lati = position.coords.latitude
+        const long = position.coords.longitude
+        setlat(lati)
+        setlon(long)
+    }
+    const error = () => {
+        console.log("unable to fetch locatio")
+    }
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(success, error)
+    }, [])
+
+    const key = "83050b13a51a4971ad17ea57772ac55a"
+    let uri = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=${key}`
+    const { data } = useFetch(uri)
+    useEffect(() => {
+        const ci = data && data.results[0].components.city
+        setActualData(ci)
+
+    }, [data])
 
 
     useEffect(() => {
         const getCurrentTime = () => {
             const obj = new Date()
             let curhrs = obj.getHours()
-            console.log(curhrs, "current time usefetch");
-            if (curhrs >= 18 ) {
+
+
+            if (curhrs >= 18) {
                 setDark(true)
 
             }
@@ -38,12 +54,12 @@ const NavBar = () => {
         }
         getCurrentTime();
     }, [])
-  
+
 
     const [searchData, setSearchData] = useState('');
 
     const r = document.querySelector(':root');
-    console.log(r);
+
 
     if (dark === true) {
         //        

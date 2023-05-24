@@ -14,68 +14,72 @@
 0,0,0,0.202
 255,255,255,0.719
 */
-:root{
+:root {
   /*-------Colors-------*/
-  --light-blue:#24609b;
-  --baro-color:#98CCFD00;
-  --set-color:#657b8e;
-  --gold:#dca84e;
-  --progress:#dca84e;
-  --supp-color:#ecf3f8;
-  --infoCircle:#ededed;
-  --thermoup:#24609B44;
-  --thermodown:#24609B33;
-    /*
+  --light-blue: #24609b;
+  --baro-color: #98CCFD00;
+  --set-color: #657b8e;
+  --gold: #dca84e;
+  --progress: #dca84e;
+  --supp-color: #ecf3f8;
+  --infoCircle: #ededed;
+  --thermoup: #24609B44;
+  --thermodown: #24609B33;
+  /*
   130c07
   
   */
-  --mirrorup:#ECF3F866;
-  --mirrordown:#ECF3F833;
-  --navbar:#d8d8d8;
-  --circle:#b7c2cb;
-  --horizon:#a7a7a7;
-  --spx:#999999;
-  --white:#fff;
-  --text:#000;
-  --horizonfill:#ffffff;
-  --shadowBlack:rgba(0,0,0,0.202);
-  --shadowWhite:rgba(255,255,255,0.719);
-/*-------colorend-------*/
-/* -------anmiamtion start------- */
---comapss-arrowAngle:0deg;
---baro-anima:0deg;
---sun-angle:0deg;
---circleroto:-90deg;
---horizonroto:90deg;
---humid:50%;
---templiq:0%;
-/* -------animation end--------- */
+  --mirrorup: #ECF3F866;
+  --mirrordown: #ECF3F833;
+  --navbar: #d8d8d8;
+  --circle: #b7c2cb;
+  --horizon: #a7a7a7;
+  --spx: #999999;
+  --white: #fff;
+  --text: #000;
+  --horizonfill: #ffffff;
+  --shadowBlack: rgba(0, 0, 0, 0.202);
+  --shadowWhite: rgba(255, 255, 255, 0.719);
+  /*-------colorend-------*/
+  /* -------anmiamtion start------- */
+  --comapss-arrowAngle: 0deg;
+  --baro-anima: 0deg;
+  --sun-angle: 0deg;
+  --circleroto: -90deg;
+  --horizonroto: 90deg;
+  --humid: 50%;
+  --templiq: 0%;
+  /* -------animation end--------- */
 
 }
-*{
+
+* {
   margin: 0px;
   padding: 0px;
-  
-  
+
+
 }
 
-html{
+html {
   font-size: 62.5%;
 }
-body{
-  background-color:var(--white);
+
+body {
+  background-color: var(--white);
   color: var(--text);
 }
-.navbar{
+
+.navbar {
   display: flex;
   position: sticky;
-  border:1px solid var( --navbar);
-  
-  height:10rem;
-  box-shadow: 0px 0.4rem 0.4rem var( --shadowBlack);
-  align-items: center; 
+  border: 1px solid var(--navbar);
+
+  height: 10rem;
+  box-shadow: 0px 0.4rem 0.4rem var(--shadowBlack);
+  align-items: center;
 }
-.logo{
+
+.logo {
   display: flex;
   align-items: center;
   font-size: 2.5rem;
@@ -83,189 +87,218 @@ body{
   margin-left: 5rem;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.logo img{
-  width:5.5rem ;
+
+.logo img {
+  width: 5.5rem;
   margin: .1rem;
-  
-}
-.navi{
-  
-  display: flex;
-  width: 100%;
-  
-  align-items: center;
-  justify-content: space-between;
-  
-}
-.search{
-  width: 100%;
-  align-items: center;
-  
-  
-  
-}
-.seacont{
-  display:flex;
-  width: 100%;
-  
-  max-width: 65rem;
-}
-.searchbox{
-  
-  background-color:var(--supp-color)  ;
-  border:1px solid var( --navbar);
-  display:flex;
-  width:100%;
-  color: var(--text);
-  border-radius: 2rem 0rem 0rem 2rem;
-  height:200rem;
-  padding-left: 1.5rem;
-  border:1px solid var(--infoCircle);
-  height: 3.5rem;
-  
-}
-.but{
-  border-radius: 0rem 2rem 2rem 0rem  !important;
-}
-.sett{
-  margin-left: 2rem;
-  margin-right: 5rem;
-  
-  font-size: 2rem;
-  
+
 }
 
-.sidenav{
+.navi {
+
+  display: flex;
+  width: 100%;
+
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.search {
+  width: 100%;
+  align-items: center;
+
+
+
+}
+
+.seacont {
+  display: flex;
+  width: 100%;
+
+  max-width: 65rem;
+}
+
+.searchbox {
+
+  background-color: var(--supp-color);
+  border: 1px solid var(--navbar);
+  display: flex;
+  width: 100%;
+  color: var(--text);
+  border-radius: 2rem 0rem 0rem 2rem;
+  height: 200rem;
+  padding-left: 1.5rem;
+  border: 1px solid var(--infoCircle);
+  height: 3.5rem;
+
+}
+
+.but {
+  border-radius: 0rem 2rem 2rem 0rem !important;
+}
+.quitsearch{display: none;}
+.searchbottholder{display: none !important; }
+.seaaa{
+  font-size: 10px !important;
+}
+.sett {
+  margin-left: 2rem;
+  margin-right: 5rem;
+
+  font-size: 2rem;
+
+}
+
+.sidenav {
   background-color: antiquewhite;
-  width:25rem;
+  width: 25rem;
   height: 100%;
 }
 
-.main{
+.main {
   display: flex;
   align-items: center;
- justify-content: center;
- flex-direction: column;
- 
- 
+  justify-content: center;
+  flex-direction: column;
+
+
 }
-.info{
+
+.info {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right:2.257rem ;
-  padding-left:2.257rem ;
-  margin:2.3rem;
+  padding-right: 2.257rem;
+  padding-left: 2.257rem;
+  margin: 2.3rem;
   width: 73rem;
-  height:35rem;
-  border: 1px solid var( --infoCircle);
+  height: 35rem;
+  border: 1px solid var(--infoCircle);
   border-radius: 1.3rem;
-  
+
 }
-.supp{
+
+.supp {
   background-color: var(--supp-color);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
   height: 15.083rem;
-  width:35rem;
-  border: 1px solid var( --infoCircle);
+  width: 35rem;
+  border: 1px solid var(--infoCircle);
   border-radius: 1.3rem;
   margin: 1.5rem;
-  
+
 }
 
-.sub{
+.sub {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   flex-wrap: wrap;
- 
-  padding-left:4.5rem;
+
+  padding-left: 4.5rem;
   max-width: 80rem;
 }
-.spx{
+
+.spx {
   font-size: 1.5rem;
-color:var(--spx);
+  color: var(--spx);
 }
-.pex{
+
+.pex {
   margin-top: 1.2rem;
   margin-bottom: 1.2rem;
-  
+
 }
-.cardcont{
+
+.cardcont {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
-.whole{
+
+.whole {
   display: flex;
   flex-direction: column;
-  
- width: 40rem; 
+
+  width: 40rem;
   height: 28.21rem;
- 
- 
+
+
 }
-.maindata{
-  
+
+.maindata {
+
   background-color: aliceblue;
 }
-.locatime{
- 
+
+.locatime {
+
   display: flex;
   justify-content: space-between;
-  
+
 }
-.loca{
+
+.loca {
   font-size: 2rem;
 }
-.time{
+
+.time {
   font-size: 1.5rem;
 }
-.tempdesc{
+
+.tempdesc {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 4.2rem;
-  margin-bottom:4.2rem ;
+  margin-bottom: 4.2rem;
 
 }
-.temp{
+
+.temp {
   font-size: 9.5rem;
 }
-.tempdesc{
+
+.tempdesc {
   font-size: 2rem;
 }
-.otherdata{
+.searchbottholder{
+display: none;
+}
+
+.otherdata {
   display: flex;
   justify-content: space-between;
- 
+
   font-size: 1.5rem;
 }
-.sunriseset{
+
+.sunriseset {
   display: flex;
-  
+
   justify-content: center;
   align-items: center;
   width: 32.32rem;
   height: 28.21rem;
   margin-left: 3rem;
   border-radius: 1.2rem;
-  background: linear-gradient(315deg,var(--mirrorup) ,var(--mirrordown) );
+  background: linear-gradient(315deg, var(--mirrorup), var(--mirrordown));
 
   border: 1px solid var(--supp-color);
 }
 
-.circle{
- display: flex;
- align-items: center;
- justify-content: center;
-  
- 
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
   border-radius: 50%;
   width: 22.55rem;
 
@@ -274,111 +307,121 @@ color:var(--spx);
 
 }
 
-.timecont{
+.timecont {
   transform: rotate(var(--horizonroto));
 }
-.innercic{
+
+.innercic {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:var( --navbar) ;
+  background-color: var(--navbar);
   /* background-color: #ffffff80; */
   height: 21.65rem;
   width: 21.65rem;
   border-radius: 50%;
 }
 
-#horizon{
-  
+#horizon {
+
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
   border-radius: 1.3rem;
-  border:0.1rem solid var(--horizon);
-  width:7.798rem;
+  border: 0.1rem solid var(--horizon);
+  width: 7.798rem;
   height: 2.52rem;
   background-color: var(--horizonfill);
-  left:0.8rem;
+  left: 0.8rem;
 }
-#horizon::before{
+
+#horizon::before {
   content: "";
   position: absolute;
-  width:11.6rem;
-  height:1px;
-  left:-11.7rem;
+  width: 11.6rem;
+  height: 1px;
+  left: -11.7rem;
   background: var(--horizon);
 }
-#horizon::after{
+
+#horizon::after {
   content: "";
   position: absolute;
-  width:11.6rem;
-  height:1px;
-  left:7.9rem;
+  width: 11.6rem;
+  height: 1px;
+  left: 7.9rem;
   background: var(--horizon);
 }
-.sun{
-  display:flex;
- 
+
+.sun {
+  display: flex;
+
   justify-content: center;
   flex-direction: column;
   margin: 1rem;
   padding-left: 2rem;
   padding-bottom: 1rem;
-    
-  
-  
+
+
+
 }
-.moon{
+
+.moon {
   margin: 0.5rem;
 }
-.indi{
+
+.indi {
   font-size: 0.5rem;
   margin-left: 1rem;
 }
-.san{
+
+.san {
   font-size: 1.334rem;
-  
+
   margin-left: 1.1rem;
-  
+
 }
-.tex{
+
+.tex {
   font-size: 1.5rem;
-} 
-.rise{
+}
+
+.rise {
   color: var(--gold);
 }
-.set{
+
+.set {
   color: var(--set-color);
 }
 
-#suryarachandrama{
+#suryarachandrama {
   font-size: 0.6rem;
 }
-.sanogolo{
+
+.sanogolo {
   background-color: #d9d9d9;
   display: flex;
-  position: relative; 
-   top: 8.5rem;
-   left: 4rem;
-color: #000;
+  position: relative;
+  top: 8.5rem;
+  left: 4rem;
+  color: #000;
   align-items: center;
   justify-content: center;
-  border-radius:50% ;
+  border-radius: 50%;
   width: 1.2rem;
-  height:1.2rem;
- transform: translate(-68px,-177px);
- box-shadow:0.6rem 0.6rem 1rem -0.1rem rgba(0, 0, 0, 0.202)
-              -0.3rem -0.3rem 1rem -0.1rem rgba(255, 255, 255, 0.719);
- z-index: 1;
+  height: 1.2rem;
+  transform: translate(-68px, -177px);
+  box-shadow: 0.6rem 0.6rem 1rem -0.1rem rgba(0, 0, 0, 0.202) -0.3rem -0.3rem 1rem -0.1rem rgba(255, 255, 255, 0.719);
+  z-index: 1;
 
 
 }
 
 
 
-#compass{
+#compass {
   width: 9.6rem;
   position: relative;
   display: flex;
@@ -387,100 +430,128 @@ color: #000;
   align-items: center;
   height: 9.6rem;
   margin-left: 6rem;
-  border:0.3rem solid var(--light-blue);
+  border: 0.3rem solid var(--light-blue);
   border-radius: 50%;
   padding: 0;
 }
-#compass::before{
+
+#compass::before {
   content: '';
   width: 1rem;
   height: 1rem;
   background-color: var(--supp-color);
-  
+
   border: 1px solid var(--light-blue);
   border-radius: 50%;
   z-index: 1;
 }
 
-#compass span{
-font-size: 1rem;
-color: var(--light-blue);
+#compass span {
+  font-size: 1rem;
+  color: var(--light-blue);
   position: absolute;
   height: 7rem;
   width: 7rem;
 }
-.ed{
+
+.ed {
   transform: rotate(135deg);
 }
-.sd{
+
+.sd {
   transform: rotate(225deg);
 }
-.wd{
+
+.wd {
   transform: rotate(315deg);
- 
+
 }
-.nd{
+
+.nd {
   transform: rotate(45deg);
-   
- 
+
+
 }
-.abc{position: absolute;}
-.abce{
- 
+
+.abc {
+  position: absolute;
+}
+
+.abce {
+
   transform: rotate(225deg);
 }
-.abcs{
- 
+
+.abcs {
+
   transform: rotate(135deg);
 }
-.abcw{
+
+.abcw {
 
   transform: rotate(45deg);
 }
-.abcn{
+
+.abcn {
 
   transform: rotate(315deg);
 }
-.arrow{
+
+.arrow {
   position: absolute;
   color: var(--light-blue);
   font-size: 5rem;
   transform: 2s;
   /* transform: rotate(20deg); */
 }
-.hum{
+
+.hum {
   margin-left: 6rem;
 }
-.drop{
+
+.drop {
   display: flex;
   align-items: center;
   justify-content: center;
-   background-color: var(--white);
-   width:12rem;
-   height:12rem;
-   clip-path: polygon(evenodd, 39.48% 16.92%, 41.92% 13.76%, 44.85% 12.25%, 47.77% 11.99%, 50.42% 12.88%, 52.23% 15.53%, 55.57% 20.83%, 59.96% 27.78%, 68.25% 42.42%, 72.56% 49.87%, 73.96% 54.17%, 74.51% 59.22%, 74.09% 66.29%, 71.24% 73.23%, 66.02% 79.17%, 61% 82.58%, 57.66% 83.96%, 52.51% 85.61%, 49.03% 85.86%, 45.68% 85.98%, 42.2% 85.73%, 39.14% 84.97%, 35.52% 83.84%, 32.03% 82.45%, 27.44% 79.42%, 24.03% 76.14%, 21.03% 71.46%, 19.5% 68.06%, 18.52% 63.38%, 18.52% 58.71%, 18.94% 55.3%, 20.06% 51.26%, 23.68% 44.44%);
-   
-  }
-  .drop1{
-    
-    clip-path: polygon(evenodd, 39.48% 16.92%, 41.92% 13.76%, 44.85% 12.25%, 47.77% 11.99%, 50.42% 12.88%, 52.23% 15.53%, 55.57% 20.83%, 59.96% 27.78%, 68.25% 42.42%, 72.56% 49.87%, 73.96% 54.17%, 74.51% 59.22%, 74.09% 66.29%, 71.24% 73.23%, 66.02% 79.17%, 61% 82.58%, 57.66% 83.96%, 52.51% 85.61%, 49.03% 85.86%, 45.68% 85.98%, 42.2% 85.73%, 39.14% 84.97%, 35.52% 83.84%, 32.03% 82.45%, 27.44% 79.42%, 24.03% 76.14%, 21.03% 71.46%, 19.5% 68.06%, 18.52% 63.38%, 18.52% 58.71%, 18.94% 55.3%, 20.06% 51.26%, 23.68% 44.44%);
-    width: 11rem;
-    height:11rem;
-    background: linear-gradient(315deg,var(--mirrorup) ,var(--mirrordown) );
-  
-  
+  background-color: var(--white);
+  width: 12rem;
+  height: 12rem;
+  clip-path: polygon(evenodd, 39.48% 16.92%, 41.92% 13.76%, 44.85% 12.25%, 47.77% 11.99%, 50.42% 12.88%, 52.23% 15.53%, 55.57% 20.83%, 59.96% 27.78%, 68.25% 42.42%, 72.56% 49.87%, 73.96% 54.17%, 74.51% 59.22%, 74.09% 66.29%, 71.24% 73.23%, 66.02% 79.17%, 61% 82.58%, 57.66% 83.96%, 52.51% 85.61%, 49.03% 85.86%, 45.68% 85.98%, 42.2% 85.73%, 39.14% 84.97%, 35.52% 83.84%, 32.03% 82.45%, 27.44% 79.42%, 24.03% 76.14%, 21.03% 71.46%, 19.5% 68.06%, 18.52% 63.38%, 18.52% 58.71%, 18.94% 55.3%, 20.06% 51.26%, 23.68% 44.44%);
+
 }
-.liquid{
+
+.drop1 {
+
+  clip-path: polygon(evenodd, 39.48% 16.92%, 41.92% 13.76%, 44.85% 12.25%, 47.77% 11.99%, 50.42% 12.88%, 52.23% 15.53%, 55.57% 20.83%, 59.96% 27.78%, 68.25% 42.42%, 72.56% 49.87%, 73.96% 54.17%, 74.51% 59.22%, 74.09% 66.29%, 71.24% 73.23%, 66.02% 79.17%, 61% 82.58%, 57.66% 83.96%, 52.51% 85.61%, 49.03% 85.86%, 45.68% 85.98%, 42.2% 85.73%, 39.14% 84.97%, 35.52% 83.84%, 32.03% 82.45%, 27.44% 79.42%, 24.03% 76.14%, 21.03% 71.46%, 19.5% 68.06%, 18.52% 63.38%, 18.52% 58.71%, 18.94% 55.3%, 20.06% 51.26%, 23.68% 44.44%);
+  width: 11rem;
+  height: 11rem;
+  background: linear-gradient(315deg, var(--mirrorup), var(--mirrordown));
+
+
+}  .searchbottholder{
+  display: flex;
+ margin-right: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 50% !important;
+  background-color: #24609b;
+  height:6rem;
+  width: 6rem;
+}
+
+.liquid {
   /* background-color: #000; */
   position: relative;
-  background-color:var(--light-blue);
-  
-  top: 0px;;
+  background-color: var(--light-blue);
+
+  top: 0px;
+  ;
   left: 0;
- border-radius: 40%;
+  border-radius: 40%;
   width: 10rem;
   height: 10rem;
- 
+
 
 }
 
@@ -495,82 +566,87 @@ color: var(--light-blue);
   clip-path: polygon(evenodd, 35.72% 8.68%, 39.55% 6.22%, 43.59% 4.98%, 48.75% 5.12%, 52.86% 7.02%, 55.85% 9.54%, 57.94% 12.31%, 59.19% 16.18%, 59.47% 60.17%, 63.37% 65.84%, 65.18% 72.89%, 64.48% 78.7%, 61.84% 84.92%, 57.03% 89.8%, 51.95% 92.25%, 45.13% 93.22%, 41.64% 92.95%, 38.16% 91.84%, 32.6% 88.29%, 28.55% 83.4%, 26.88% 79.25%, 26.32% 76.07%, 26.32% 73.17%, 26.74% 69.02%, 28.27% 65.42%, 29.81% 62.79%, 31.75% 60.44%, 31.89% 15.49%, 33.43% 11.76%);
 } */
 
-.therrr{
+.therrr {
   display: flex;
   align-items: center;
   /* justify-content: center; */
   flex-direction: column;
   position: relative;
   height: 10rem;
-  width:10rem;
+  width: 10rem;
+  margin-left: 4rem;
   /* background-color: #ad0ed12d; */
 }
-.bar{
+
+.bar {
   z-index: 1;
-  height: 69.77px;
-  width: 7.97px;
-  background: linear-gradient(315deg,var(--thermoup) ,var(--thermodown) ) ; 
+  height: 8rem;
+  width: 0.797rem;
+  background: linear-gradient(315deg, var(--thermoup), var(--thermodown));
   border-radius: 0 0 2.5rem 2.5rem;
   position: absolute;
   /* top:5px; */
-  left:50%;
+  left: 50%;
   transform: translate(-50%) rotate(180deg);
- 
+
 }
-.bott{
+
+.bott {
   height: 2.222rem;
   width: 2.222rem;
-  background: linear-gradient(315deg,var(--thermoup) ,var(--thermodown) ) ; 
+  background: linear-gradient(315deg, var(--thermoup), var(--thermodown));
   position: relative;
- top:69px;
+  top: 69px;
   border-radius: 50%;
 
 }
-.bott::after{
+
+.bott::after {
   content: "";
   display: block;
-  width:1.33rem;
-  height:1.33rem;
+  width: 1.33rem;
+  height: 1.33rem;
   border-radius: 50%;
   background-color: red;
   position: absolute;
-  top:50%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  
+  transform: translate(-50%, -50%);
+
 
 }
-.bar::after{
+
+.bar::after {
   content: "";
   display: block;
   height: 0%;
-  width:0.3rem;
+  width: 0.3rem;
   position: absolute;
-  left:30%;
+  left: 30%;
   /* transform: translate(-50%); */
   top: -3.3px;
   border-radius: 0rem 0rem 1rem 1rem;
   background-color: red;
- 
+
 }
 
-.baro{
-  
+.baro {
+
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   height: 10.67rem;
   width: 10.67rem;
-  margin-left:7rem ;
-  border:0rem solid;
-  background:  conic-gradient(var(--baro-color) , #6bb6fc , #98CCFD00 );
+  margin-left: 7rem;
+  border: 0rem solid;
+  background: conic-gradient(var(--baro-color), #6bb6fc, #98CCFD00);
   border-radius: 50%;
- 
-  
+
+
 }
 
-.baro::after{
+.baro::after {
   content: '';
   position: absolute;
   top: 9.2rem;
@@ -579,31 +655,33 @@ color: var(--light-blue);
   background-color: var(--light-blue);
 }
 
-.boxxx{
+.boxxx {
   position: relative;
   left: -13.5rem;
-  top:-7rem;
+  top: -7rem;
   height: 5rem;
   width: 5rem;
   background-color: var(--supp-color);
-  margin-left:7rem ;
-  border:0.3rem solid var(--supp-color);
+  margin-left: 7rem;
+  border: 0.3rem solid var(--supp-color);
   border-radius: 5rem 0px 3rem 0px;
   transform: rotate(45deg);
- 
-  
- 
+
+
+
 }
-.cic{
+
+.cic {
   width: 1rem;
   height: 1rem;
   background-color: var(--supp-color);
   border: 1px solid var(--light-blue);
   border-radius: 50%;
-z-index: 3;
+  z-index: 3;
 }
-.pop{
-  
+
+.pop {
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -613,313 +691,505 @@ z-index: 3;
   background-color: var(--supp-color);
   border-radius: 50%;
 }
-.ar{
+
+.ar {
   position: absolute;
   color: var(--light-blue);
   font-size: 5rem;
   transform: rotate(45deg);
 
-  }
-  .ther{
-    font-size: 10rem;
+}
+
+.ther {
+  font-size: 10rem;
   color: var(--light-blue);
   margin-left: 4.5rem;
-  }
-  
-  /*------- animation------- */
-  .arrow{
-    transition: all 2s ease-in-out;
-    animation: compp 3s linear forwards;
-  }
-  @keyframes compp{
-    0%{
-      transform: rotate(255deg);
-    }
-    100%{
-      transform: rotate(var(--comapss-arrowAngle));
-    }
-  }
-  .baro{
-   
-    animation: baroanim 3s linear forwards;
-    
-  }
-  @keyframes baroanim {
-    0%{
-      transform: rotate(45deg);
-    }
-    100%{
-      transform: rotate(var(--baro-anima));
-      /* transform: rotate(45deg); */
+}
 
-    }
-    
+/*------- animation------- */
+.arrow {
+  transition: all 2s ease-in-out;
+  animation: compp 3s linear forwards;
+}
+
+@keyframes compp {
+  0% {
+    transform: rotate(255deg);
   }
-  .circle{
- 
-    animation: sunny 5s linear forwards;
-    background: conic-gradient(var(--progress) var(--sun-angle), var( --circle) 0deg);
+
+  100% {
+    transform: rotate(var(--comapss-arrowAngle));
   }
-  .liquid{
-    animation: spin 3s linear forwards;
+}
+
+.baro {
+
+  animation: baroanim 3s linear forwards;
+
+}
+
+@keyframes baroanim {
+  0% {
+    transform: rotate(45deg);
   }
-  @keyframes spin {
-    0%{
-      transform: translateY(100%) rotate(0deg);
-    }
-    100%{
-      transform: translateY(var(--humid)) rotate(360deg);
-    }
-    
+
+  100% {
+    transform: rotate(var(--baro-anima));
+    /* transform: rotate(45deg); */
+
   }
-  .bar::after{
-    animation:thermo 3s linear forwards ;
+
+}
+
+.circle {
+
+  animation: sunny 5s linear forwards;
+  background: conic-gradient(var(--progress) var(--sun-angle), var(--circle) 0deg);
+}
+
+.liquid {
+  animation: spin 3s linear forwards;
+}
+
+@keyframes spin {
+  0% {
+    transform: translateY(100%) rotate(0deg);
   }
-  @keyframes thermo {
-    0%{
-      height: 0%;
-    }
-    100%{
-      height: var(--templiq);
-    }
+
+  100% {
+    transform: translateY(var(--humid)) rotate(360deg);
   }
-  
-  /*------------------------ */
-  @media(max-width:998rem){
-    html{
-      font-size: 55%;
-    }
-    .sanogolo{
-      top:10.25rem;
-      left:5rem;
-    }
+
+}
+
+.bar::after {
+  animation: thermo 3s linear forwards;
+}
+
+@keyframes thermo {
+  0% {
+    height: 0%;
   }
-  @media(max-width:768px){
-    html{
-      font-size: 45%;
-    }
-    .sanogolo{
-      top:14.5rem;
-      left:7rem;
-    }
-    .supp{
-       
-      font-size: 5rem;
-      height: 32.32rem;
-      width:75rem; 
-    }
-    #compass{
-      width: 25rem;
-      height: 25rem;
-      position: relative;
-     
-    }
-    .spx{
-      font-size: 3.75rem;
-    color:var(--spx);
-    }
-   #compass span{
+
+  100% {
+    height: var(--templiq);
+  }
+}
+
+/*------------------------ */
+@media(max-width:998rem) {
+  html {
+    font-size: 55%;
+  }
+
+  .sanogolo {
+    top: 10.25rem;
+    left: 5rem;
+  }
+}
+
+@media(max-width:768px) {
+  html {
+    font-size: 45%;
+  }
+  .navbar {
+    width: 100%;
+    height: 10rem;
+  }
+
+  .sanogolo {
+    top: 14.5rem;
+    left: 7rem;
+  }
+
+  .supp {
+
+    font-size: 5rem;
+    height: 32.32rem;
+    width: 75rem;
+  }
+
+  #compass {
+    width: 25rem;
+    height: 25rem;
+    position: relative;
+
+  }
+
+  .spx {
+    font-size: 3.75rem;
+    color: var(--spx);
+  }
+
+  #compass span {
     height: 15rem;
     width: 15rem;
     font-size: 3rem;
-   }
-   .arrow{
+  }
+
+  .arrow {
     font-size: 10rem;
-   }
-   #compass::before{
+  }
+
+  #compass::before {
     content: '';
     width: 2rem;
     height: 2rem;
   }
-  .drop{
+
+  .drop {
     font-size: 30rem;
     margin-left: 4rem;
   }
-  .ther{
-    font-size: 25rem;
-    
-  }
-  .baro{
 
-    
+  .ther {
+    font-size: 25rem;
+
+  }
+
+  .baro {
+
+
     height: 25rem;
     width: 25rem;
     margin-left: 13rem;
-   
+
   }
-  .pop{
+
+  .pop {
     height: 20rem;
-width: 20rem;
+    width: 20rem;
   }
-  #compass::before{
-    
+
+  #compass::before {
+
     width: 2rem;
     height: 2rem;
-    
-    
+
+
   }
-  .ar{
+
+  .ar {
     font-size: 12rem;
-    }
-    .baro::after{
-      top: 21rem;
-      width: 2.63rem;
-      height: 5rem;
-      background-color: var(--light-blue);
-    }
-    .cic{
-      width: 2rem;
-      height: 2rem;
-     
-    }
-    .boxxx{
-      
-      left: 17rem;
-      top:-47rem;
-      height: 10rem;
-      width: 10rem;
-      background-color: var(--supp-color);
-      border:0.3rem solid var(--supp-color);
-     
-      border-radius: 7rem 0px 8rem 0px;
-    }
+  }
+
+  .baro::after {
+    top: 21rem;
+    width: 2.63rem;
+    height: 5rem;
+    background-color: var(--light-blue);
+  }
+
+  .cic {
+    width: 2rem;
+    height: 2rem;
+
+  }
+
+  .boxxx {
+
+    left: 17rem;
+    top: -47rem;
+    height: 10rem;
+    width: 10rem;
+    background-color: var(--supp-color);
+    border: 0.3rem solid var(--supp-color);
+
+    border-radius: 7rem 0px 8rem 0px;
+  }
+  .drop {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .drop1 {
+    height: 29rem;
+    width: 29rem;
+  }
+
+  .liquid {
+    top: 0px;
+    left: 0;
+    width: 29rem;
+    height: 29rem;
+  }
+  .bar {
+   
+    height: 15rem;
+    width: 1.49rem;
+   
+    /* top:5px; */
+    /* bottom: 2.08rem; */
+    left: 50%;
     
   
   }
-
-  @media(max-width:540px){
-    html{
-      font-size: 62.5%;
-      display: flex;
-      align-items: center;
-    
-    }
-    .navbar{
-      width: 100%;
-      height:20rem;
-    }
-    .searchbox{
-      height: 10rem;
-      border-radius:7rem 0 0 7rem;
-   
-    }
-    .but{
-      border-radius: 0rem 7rem 7rem 0rem  !important;
-      width: 15rem;
-      }
-      .sett{
-        margin-left: 2rem;
-        margin-right: 7rem;
-       
-        font-size: 8rem;
-      
-      }
-      .seaaa{
-        font-size: 5rem;
-      }
-      .logo{
-       
-        font-size: 5rem;
-
-
-      }
-      .logo img{
-        width:7rem ;
-        
-      } 
-      .main{
-        padding-left:2rem;
-        padding-right: 2rem;
-      } 
-      .sanogolo{
-        top:7.75rem;
-        left:4rem;
-      }     
-      .sub{
-        padding-left:0rem;
-        flex-direction: column; 
-        flex-wrap: wrap;
-      }  
-      .supp{
-       
-        font-size: 5rem;
-        height: 32.32rem;
-        width:75rem; 
-      }
-      #compass{
-        width: 25rem;
-        height: 25rem;
-        position: relative;
-       
-      }
-      .spx{
-        font-size: 3.75rem;
-      color:var(--spx);
-      }
-     #compass span{
-      height: 15rem;
-      width: 15rem;
-      font-size: 3rem;
-     }
-     .arrow{
-      font-size: 10rem;
-     }
-     #compass::before{
-      content: '';
-      width: 2rem;
-      height: 2rem;
-    }
-    .drop{
-      font-size: 30rem;
-    }
-    .ther{
-      font-size: 25rem;
-    }
-    .baro{
   
-      
-      height: 25rem;
-      width: 25rem;
+  .bott {
+    height: 4.167rem;
+    width: 4.167rem;
    
-     
-    }
-    .pop{
-      height: 20rem;
-  width: 20rem;
-    }
-    #compass::before{
-      
-      width: 2rem;
-      height: 2rem;
-      
-      
-    }
-    .ar{
-      font-size: 12rem;
-      }
-      .baro::after{
-        top: 21rem;
-        width: 2.63rem;
-        height: 5rem;
-        background-color: var(--light-blue);
-      }
-      .cic{
-        width: 2rem;
-        height: 2rem;
-       
-      }
-      .boxxx{
-        
-        left: 15rem;
-        top:-47rem;
-        height: 10rem;
-        width: 10rem;
-        background-color: var(--supp-color);
-        border:0.3rem solid var(--supp-color);
-       
-        border-radius: 7rem 0px 8rem 0px;
-      }
-     
-   
-      
+    top: 101px;
+  
+  
   }
+  .bar::after {
+ width: 0.56rem;
+  left: 30%;
+  }
+  .therrr{
+    height: 20rem;
+    width: 20rem;
+    margin-left: 9rem;
+  }
+}
+
+@media(max-width:540px) {
+  html {
+    font-size: 62.5%;
+    display: flex;
+    align-items: center;
+
+  }
+
+  .navbar {
+   
+    width: 100%;
+    height: 12rem;
+  }
+.quitsearch{
+  display: flex;
+  font-size: 25px;
+ color: #8f8f8f;
+
+}
+
+  .searchbox {
+    width: 800px !important;
+    height: 3.5rem;
+    border-radius: 7rem 7rem 7rem 7rem;
+    margin: 10px;
+
+  }
+  .search{
+    display: flex;
+    flex-direction: row;
+    width:800px !important;
+   
+  }
+.seacont{
+  display: none;
+}
+  .but {
+     display: none;
+    border-radius: 0rem 7rem 7rem 0rem !important;
+    width: 15rem;
+    height: 3.5rem;
+    
+  }
+  .bottt{
+    color: white;
+    font-size: 30px;
+    
+  }
+  .searchbottholder{
+
+    display: flex !important;
+   margin-right: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50% !important;
+    background-color: #24609b;
+    height:6rem;
+    width: 6rem;
+  }
+  .seaaa{
+    /* display: none; */
+    font-size: 25px !important;
+  }
+  .sett {
+    /* background-color: #24609b68; */
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 2rem;
+    margin-right: 7rem;
+
+    font-size: 8rem;
+
+  }
+
+  .seaaa {
+    font-size: 5rem;
+  }
+
+  .logo {
+
+    font-size: 3rem;
+
+
+  }
+
+  .logo img {
+    width: 5rem;
+
+  }
+
+  .main {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .sanogolo {
+    top: 7.75rem;
+    left: 4rem;
+  }
+
+  .sub {
+    padding-left: 0rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .supp {
+
+    font-size: 5rem;
+    height: 32.32rem;
+    width: 75rem;
+  }
+
+  #compass {
+    width: 25rem;
+    height: 25rem;
+    position: relative;
+
+  }
+
+  .spx {
+    font-size: 3.75rem;
+    color: var(--spx);
+  }
+
+  #compass span {
+    height: 15rem;
+    width: 15rem;
+    font-size: 3rem;
+  }
+
+  .arrow {
+    font-size: 10rem;
+  }
+
+  #compass::before {
+    content: '';
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .drop {
+    font-size: 30rem;
+  }
+
+  .ther {
+    font-size: 25rem;
+  }
+
+  .baro {
+
+
+    height: 25rem;
+    width: 25rem;
+
+
+  }
+
+  .pop {
+    height: 20rem;
+    width: 20rem;
+  }
+
+  #compass::before {
+
+    width: 2rem;
+    height: 2rem;
+
+
+  }
+
+  .ar {
+    font-size: 12rem;
+  }
+
+  .baro::after {
+    top: 21rem;
+    width: 2.63rem;
+    height: 5rem;
+    background-color: var(--light-blue);
+  }
+
+  .cic {
+    width: 2rem;
+    height: 2rem;
+
+  }
+
+  .boxxx {
+
+    left: 15rem;
+    top: -47rem;
+    height: 10rem;
+    width: 10rem;
+    background-color: var(--supp-color);
+    border: 0.3rem solid var(--supp-color);
+
+    border-radius: 7rem 0px 8rem 0px;
+  }
+
+  .drop {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .drop1 {
+    height: 29rem;
+    width: 29rem;
+  }
+
+  .liquid {
+    top: 0px;
+    left: 0;
+    width: 29rem;
+    height: 29rem;
+  }
+  .bar {
+   
+    height: 15rem;
+    width: 1.49rem;
+   
+    /* top:5px; */
+    /* bottom: 2.08rem; */
+    left: 50%;
+    
+  
+  }
+  
+  .bott {
+    height: 4.167rem;
+    width: 4.167rem;
+   
+    top: 138px;
+  
+  
+  }
+  .bar::after {
+ width: 0.56rem;
+  left: 30%;
+  }
+  .therrr{
+    height: 20rem;
+    width: 20rem;
+    margin-left: 9rem;
+  }
+
+}

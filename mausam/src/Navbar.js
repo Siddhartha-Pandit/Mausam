@@ -5,6 +5,7 @@ import Main from './Main';
 import Button from '@mui/material/Button';
 import useFetch from './useFetch';
 
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useEffect, useState } from 'react';
 
 import { BsSearch } from "react-icons/bs";
@@ -14,6 +15,8 @@ const NavBar = () => {
     const [actualData, setActualData] = useState('');
     const [lat, setlat] = useState('');
     const [lon, setlon] = useState('')
+    const [isVisible, setSIVisible] = useState(true)
+    const [searchData, setSearchData] = useState('');
     function success(position) {
         const lati = position.coords.latitude
         const long = position.coords.longitude
@@ -35,8 +38,6 @@ const NavBar = () => {
         setActualData(ci)
 
     }, [data])
-
-
     useEffect(() => {
         const getCurrentTime = () => {
             const obj = new Date()
@@ -56,7 +57,7 @@ const NavBar = () => {
     }, [])
 
 
-    const [searchData, setSearchData] = useState('');
+   
 
     const r = document.querySelector(':root');
 
@@ -103,27 +104,65 @@ const NavBar = () => {
         r.style.setProperty("--thermoup", "#24609B66")
         r.style.setProperty("--thermodown", "#24609B33")
     }
+    function searchopen() {
+        const r = document.querySelector('.seacont');
+        const a = document.querySelector('.a');
+        r.style.setProperty("display", "flex")
+        a.style.setProperty("display", "none")
+        const b = document.querySelector('.searchbottholder');
+        b.style.setProperty("display", "none")
+        const c = document.querySelector('.sett');
+        c.style.setProperty("display", "none")
+        c.style.setProperty("margin", "0px")
+        setSIVisible(false)
 
+        console.log("button clicked ")
+    }
+    function searchclose() {
+        const r = document.querySelector('.seacont');
+        const a = document.querySelector('.a');
+        r.style.setProperty("display", "none")
+        a.style.setProperty("display", "flex")
+        const b = document.querySelector('.searchbottholder');
+        b.style.setProperty("display", "flex")
+        const c = document.querySelector('.sett');
+        c.style.setProperty("display", "flex")
+        c.style.setProperty("margin", "0px")
+        setSIVisible(true)
+
+        console.log("button clicked ")
+    }
+    function handleSearch(event) {
+        event.preventDefault();
+        setActualData(searchData);
+      }
     return (
         <div>
             <div className='navbar'>
                 <nav className='navi'>
-                    <div className='logo'>
+
+                    <div className='a logo'>
                         <img src={logo} alt="logo" ></img>
                         <div>Mausam</div>
                     </div>
                     <div className='seacont'>
+
                         <div className='search'>
-                            <form>
-                                <input type='text' value={searchData} placeholder="search something here..." className="searchbox" onChange={(e) => setSearchData(e.target.value)}></input>
-                            </form>
+                            <div className='quitsearch' onClick={(e) => searchclose()}>
+                                <AiOutlineArrowLeft />
+                            </div>
+                            <div>
+                                <form onSubmit={handleSearch}>
+                                    <input type='text' value={searchData} placeholder="search something here..." className="searchbox" onChange={(e) => setSearchData(e.target.value)}></input>
+                                </form>
 
-
+                            </div>
                         </div>
-                        <Button variant="contained" className='but' onClick={(e) => setActualData(searchData)}><BsSearch className='seaaa' /></Button>
+                        {isVisible && <Button variant="contained" className='but' onClick={(e) => setActualData(searchData)}><BsSearch className='seaaa' /></Button>}
                     </div>
+
                     {/*  */}
-                    <div className='sett'>  <Toggle onClick={() => setDark(!dark)} /></div>
+                   <div className='sett'> <div className='searchbottholder' onClick={(e) => searchopen()}><BsSearch className='bottt' /></div><div  >{isVisible && <Toggle onClick={() => setDark(!dark)} />}</div> </div>
                 </nav>
             </div>
             <div>

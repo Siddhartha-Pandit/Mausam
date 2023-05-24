@@ -87,7 +87,7 @@ const Main = (props) => {
 
 
     return (
-        <div className="main">
+        <div className="main" data-testid = "main-1">
 
             <div className="cardcont">
                 <div className="info" style={{

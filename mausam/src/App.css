@@ -300,7 +300,7 @@ display: none;
   display: flex;
   align-items: center;
   justify-content: center;
-
+color: var(--text);
 
   border-radius: 50%;
   width: 22.55rem;
@@ -334,6 +334,7 @@ display: none;
   font-size: 1.2rem;
   border-radius: 1.3rem;
   border: 0.1rem solid var(--horizon);
+
   width: 7.798rem;
   height: 2.52rem;
   background-color: var(--horizonfill);
@@ -399,28 +400,9 @@ display: none;
   color: var(--set-color);
 }
 
-#suryarachandrama {
-  font-size: 0.6rem;
-}
-
-.sanogolo {
-  background-color: #d9d9d9;
-  display: flex;
-  position: relative;
-  top: 8.5rem;
-  left: 4rem;
-  color: #000;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  width: 1.2rem;
-  height: 1.2rem;
-  transform: translate(-68px, -177px);
-  box-shadow: 0.6rem 0.6rem 1rem -0.1rem rgba(0, 0, 0, 0.202) -0.3rem -0.3rem 1rem -0.1rem rgba(255, 255, 255, 0.719);
-  z-index: 1;
 
 
-}
+
 
 
 
@@ -785,10 +767,7 @@ display: none;
     font-size: 55%;
   }
 
-  .sanogolo {
-    top: 10.25rem;
-    left: 5rem;
-  }
+  
 }
 
 @media(max-width:768px) {
@@ -800,10 +779,7 @@ display: none;
     height: 10rem;
   }
 
-  .sanogolo {
-    top: 14.5rem;
-    left: 7rem;
-  }
+
 
   .supp {
 
@@ -1044,10 +1020,7 @@ display: none;
     padding-right: 2rem;
   }
 
-  .sanogolo {
-    top: 7.75rem;
-    left: 4rem;
-  }
+ 
 
   .sub {
     padding-left: 0rem;

@@ -218,13 +218,9 @@ const Main = (props) => {
                                 <div className="timecont">
 
                                     <div className="sun"> <div className="san rise"><WiSunrise /></div><div className="indi">Sunrise</div><div className="tex">{unixtoreal(content && content.sys.sunrise)}</div></div>
-
+                    
                                     <div id="horizon">Horizon</div>
 
-                                    <div className="sanogolo">
-                                        <FaSun id="suryarachandrama" />
-
-                                    </div>
                                     <div className="sun moon"> <div className="san set"><WiSunset /></div><div className="tex"><div className="indi">Sunset</div>{unixtoreal(content && content.sys.sunset)}</div></div>
                                 </div>
                             </div>
